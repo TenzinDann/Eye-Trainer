@@ -37,7 +37,7 @@ const STAGE_THEME = {
   },
   light: {
     base: "#f1f1f4",
-    line: "rgba(120,120,130,0.85)",
+    line: "rgba(0,0,0,0.95)",
   },
 };
 
