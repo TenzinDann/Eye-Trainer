@@ -1,0 +1,12 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+const isUserSite = repoName.toLowerCase().endsWith(".github.io");
+const base = isGithubActions ? (isUserSite ? "/" : `/${repoName}/`) : "/";
+
+export default defineConfig({
+  plugins: [react()],
+  base,
+});

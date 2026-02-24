@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.eyetrainer-clone {
+  background-color: white;
+  color: #333;
+  stroke: #333;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.eyetrainer-clone.darkmode {
+  background-color: #333;
+  color: white;
+  stroke: white;
+}
+
+.eyetrainer-clone.greenbackground {
+  background-color: #c7d7bc;
+  stroke: #333;
+  color: #333;
+}
+
+.eyetrainer-clone.blackbackground {
+  background-color: black;
+  color: white;
+  stroke: white;
+}
+
+.eyetrainer-clone .announcement-banner {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 48px 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background: #006529;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.eyetrainer-clone .banner-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.eyetrainer-clone .banner-cta {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.eyetrainer-clone .banner-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: opacity 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.eyetrainer-clone .banner-close:hover {
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.eyetrainer-clone .banner-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.eyetrainer-clone #canvas {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -35%);
+}
+
+.eyetrainer-clone #checkbox-container {
+  position: fixed;
+  height: auto;
+  bottom: 5%;
+  left: 2%;
+}
+
+.eyetrainer-clone .checkbox-wrapper-1,
+.eyetrainer-clone .checkbox-wrapper-1::after,
+.eyetrainer-clone .checkbox-wrapper-1::before {
+  box-sizing: border-box;
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 label {
+  display: block;
+  margin-bottom: 0.25em;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted {
+  margin: 0;
+  width: 0;
+  height: 0;
+  display: inline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted + label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  height: 1.15em;
+  width: 1.15em;
+  margin-right: 0.6em;
+  color: rgba(0, 0, 0, 0.275);
+  border: solid 0.06em;
+  box-shadow:
+    0 0 0.04em,
+    0 0.06em 0.16em -0.03em inset,
+    0 0 0 0.07em transparent inset;
+  border-radius: 0.2em;
+  background:
+    url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' xml:space='preserve' fill='white' viewBox='0 0 9 9'><rect x='0' y='4.3' transform='matrix(-0.707 -0.7072 0.7072 -0.707 0.5891 10.4702)' width='4.3' height='1.6' /><rect x='2.2' y='2.9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 12.1877 2.9833)' width='6.1' height='1.7' /></svg>")
+      no-repeat center,
+    white;
+  background-size: 0;
+  will-change: color, border, background, background-size, box-shadow;
+  transform: translate3d(0, 0, 0);
+  transition: color 0.1s, border 0.1s, background 0.15s, box-shadow 0.1s;
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted:checked + label::before {
+  background-color: #3b99fc;
+  background-size: 0.75em;
+  color: rgba(0, 0, 0, 0.075);
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted:focus + label::before {
+  box-shadow:
+    0 0 0.04em,
+    0 0.06em 0.16em -0.03em transparent inset,
+    0 0 0 0.07em rgba(0, 0, 0, 0.1) inset,
+    0 0 0 3.3px rgba(65, 159, 255, 0.55),
+    0 0 0 5px rgba(65, 159, 255, 0.3);
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted.dark + label::before {
+  color: rgba(255, 255, 255, 0.275);
+  background-color: #222;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' xml:space='preserve' fill='rgba(34, 34, 34, 0.999)' viewBox='0 0 9 9'><rect x='0' y='4.3' transform='matrix(-0.707 -0.7072 0.7072 -0.707 0.5891 10.4702)' width='4.3' height='1.6' /><rect x='2.2' y='2.9' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 12.1877 2.9833)' width='6.1' height='1.7' /></svg>");
+}
+
+.eyetrainer-clone .checkbox-wrapper-1 [type="checkbox"].substituted.dark:checked + label::before {
+  background-color: #a97035;
+  color: rgba(255, 255, 255, 0.075);
+}
+
+.eyetrainer-clone #arrowButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: -30px;
+}
+
+.eyetrainer-clone button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.eyetrainer-clone svg {
+  padding: 5px;
+}
+
+.eyetrainer-clone .arrow {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  transition: transform 0.2s ease;
+}
+
+.eyetrainer-clone .arrow:hover {
+  transform: scale(1.08);
+}
+
+.eyetrainer-clone .left {
+  left: 0;
+}
+
+.eyetrainer-clone .right {
+  right: 0;
+}
+
+.eyetrainer-clone #currentExerciseText {
+  font-size: 25px;
+  font-weight: bold;
+  width: 240px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+}
+
+@media (max-width: 900px) {
+  .eyetrainer-clone .announcement-banner {
+    font-size: 13px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 44px;
+  }
+
+  .eyetrainer-clone #checkbox-container {
+    left: 12px;
+    right: 12px;
+    bottom: 3%;
+  }
+
+  .eyetrainer-clone .checkbox-wrapper-1 label {
+    font-size: 16px;
+  }
+
+  .eyetrainer-clone #arrowButtons {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .eyetrainer-clone #currentExerciseText {
+    font-size: 18px;
+    width: auto;
+    min-width: 160px;
+  }
+}
